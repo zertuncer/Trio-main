@@ -1,0 +1,40 @@
+version: 2.1
+
+#
+# Jobs
+#
+
+jobs:
+  test:
+    macos:
+      xcode: 26.1.0
+    resource_class: m4pro.medium
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: |
+            set -o pipefail && xcodebuild -scheme LoopAlgorithm test -destination "platform=iOS Simulator,name=iPhone 17,OS=latest" | xcpretty
+      - store_test_results:
+          path: test_output
+  package:
+    macos:
+      xcode: 26.1.0
+    resource_class: m4pro.medium
+    steps:
+      - checkout
+      - run:
+          name: Build LoopAlgorithmPackage
+          command: |
+            set -o pipefail && xcodebuild build -scheme LoopAlgorithm -destination "platform=iOS Simulator,name=iPhone 17,OS=latest" | xcpretty
+#
+# Workflows
+#
+
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - test
+      - package
+

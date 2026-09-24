@@ -1,0 +1,33 @@
+import LoopKitUI
+import SwiftUI
+
+struct AlertHistoryView: View {
+    @ObservedObject var viewModel: AlertHistoryViewModel
+
+    var body: some View {
+        VStack(alignment: .center) {
+            if viewModel.isLoading {
+                ActivityIndicator(isAnimating: .constant(true), style: .large)
+                Text("Loading data...", comment: "loading calibration data")
+            } else {
+                List {
+                    ForEach($viewModel.history.reversed()) { group in
+                        Section(header: Text(group.wrappedValue.date)) {
+                            ForEach(group.items.reversed()) { item in
+                                HStack {
+                                    Text(item.wrappedValue.alarmTitle)
+                                    Spacer()
+                                    Text(item.wrappedValue.time)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .onAppear {
+            viewModel.start()
+        }
+    }
+}

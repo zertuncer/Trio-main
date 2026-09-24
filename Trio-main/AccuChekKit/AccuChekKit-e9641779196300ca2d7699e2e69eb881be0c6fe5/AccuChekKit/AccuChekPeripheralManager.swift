@@ -1,0 +1,273 @@
+import CoreBluetooth
+import CryptoKit
+import UIKit
+
+class AccuChekPeripheralManager: NSObject {
+    private let logger: AccuChekLogger
+
+    private var peripheral: CBPeripheral
+    private let cgmManager: AccuChekCgmManager
+    private var connecionCompletion: ((AccuChekError?) -> Void)?
+
+    internal var pairingAdapter: PairingAdapter?
+    private var isPairing: Bool = false
+
+    private var readQueue: (AccuChekDispatchGroup, CBUUID)?
+    private var writeQueue: (AccuChekDispatchGroup, [CBUUID])?
+
+    internal var mtu: Int = 20
+    internal var aesCgmKey: SymmetricKey?
+
+    init(peripheral: CBPeripheral, cgmManager: AccuChekCgmManager, completion: ((AccuChekError?) -> Void)?) {
+        self.peripheral = peripheral
+        self.cgmManager = cgmManager
+        logger = AccuChekLogger(category: "PeripheralManager", cgmManager: cgmManager)
+        connecionCompletion = completion
+
+        if let key = cgmManager.state.aesKey {
+            aesCgmKey = SymmetricKey(data: key)
+            logger.debug("Constructed AES CGM Key!")
+        }
+
+        super.init()
+        peripheral.delegate = self
+    }
+
+    func read(service serviceUUID: CBUUID, characteristic characteristicUUID: CBUUID, withoutTimeout: Bool = false) -> Data? {
+        guard let characteristic = getCharacteristic(serviceUUID: serviceUUID, characteristicUUID: characteristicUUID) else {
+            return nil
+        }
+
+        logger.debug("Reading from \(characteristic.uuid.uuidString)", type: .send)
+        let readQ = AccuChekDispatchGroup()
+        readQ.enter()
+        readQueue = (readQ, characteristicUUID)
+        peripheral.readValue(for: characteristic)
+
+        defer {
+            readQueue = nil
+        }
+
+        if withoutTimeout {
+            return readQ.wait()
+        } else {
+            return readQ.wait(timeout: .now() + .seconds(10))
+        }
+    }
+
+    func write(packet: AccuChekBasePacket, service serviceUUID: CBUUID, characteristic characteristicUUID: CBUUID) -> Bool {
+        guard let characteristic = getCharacteristic(serviceUUID: serviceUUID, characteristicUUID: characteristicUUID) else {
+            return false
+        }
+
+        var writeQ = AccuChekDispatchGroup()
+        writeQ.enter()
+        writeQueue = (writeQ, packet.characteristics)
+
+        defer {
+            writeQueue = nil
+        }
+
+        for item in segmentData(data: packet.getRequest(), mtu: mtu) {
+            logger.debug("Writing \(item.hexString()) to \(characteristic.uuid.uuidString)", type: .send)
+            peripheral.writeValue(
+                item,
+                for: characteristic,
+                type: serviceUUID == CBUUID.CGM_SERVICE ? .withResponse : .withoutResponse
+            )
+            Thread.sleep(forTimeInterval: .milliseconds(100))
+        }
+
+        while !packet.isComplete() {
+            // Wait for response or timeout timer...
+            let result = writeQ.wait(timeout: .now() + .seconds(10))
+            guard let result else {
+                logger.error("Timeout has been hit", type: .send)
+                writeQueue = nil
+                return false
+            }
+
+            packet.parseResponse(data: result)
+
+            writeQ = AccuChekDispatchGroup()
+            writeQ.enter()
+            writeQueue = (writeQ, packet.characteristics)
+        }
+
+        return true
+    }
+
+    func startNotify(service serviceUUID: CBUUID, characteristic characteristicUUID: CBUUID) {
+        guard let characteristic = getCharacteristic(serviceUUID: serviceUUID, characteristicUUID: characteristicUUID) else {
+            return
+        }
+
+        peripheral.setNotifyValue(true, for: characteristic)
+    }
+
+    private func getCharacteristic(serviceUUID: CBUUID, characteristicUUID: CBUUID) -> CBCharacteristic? {
+        guard let service = peripheral.services?.first(where: { $0.uuid == serviceUUID }) else {
+            logger.error("Failed to find service: \(serviceUUID.uuidString)")
+            return nil
+        }
+
+        guard let characteristic = service.characteristics?.first(where: { $0.uuid == characteristicUUID }) else {
+            logger.error("Failed to find characteristic: \(characteristicUUID.uuidString)")
+            return nil
+        }
+
+        return characteristic
+    }
+}
+
+extension AccuChekPeripheralManager: CBPeripheralDelegate {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: (any Error)?) {
+        if let error = error {
+            logger.error("Failed to discoverServices: \(error.localizedDescription)")
+            connecionCompletion?(.discoveringFailed)
+            return
+        }
+
+        logger.info("Discovered services: \(peripheral.services?.map(\.uuid.uuidString).joined(separator: ", ") ?? "none")")
+        if let acsService = peripheral.services?.first(where: { $0.uuid == CBUUID.ACS_SERVICE }) {
+            logger.debug("Discovering ACS Service...")
+            peripheral.discoverCharacteristics(CBUUID.ACS_CHARACTERISTICS, for: acsService)
+        }
+
+        guard let rcsService = peripheral.services?.first(where: { $0.uuid == CBUUID.RCS_SERVICE }) else {
+            logger.error("Couldnt find RCS nor ACS service")
+            connecionCompletion?(.discoveringFailed)
+            return
+        }
+
+        logger.debug("Discovering RCS servcice...")
+        peripheral.discoverCharacteristics(CBUUID.ACS_CHARACTERISTICS, for: rcsService)
+    }
+
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: (any Error)?) {
+        if let error = error {
+            logger
+                .error(
+                    "Failed to discoverCharacteristics - service: \(service.uuid.uuidString), error: \(error.localizedDescription)"
+                )
+            connecionCompletion?(.discoveringFailed)
+            return
+        }
+
+        let serviceUUID = service.uuid
+        let characteristics = service.characteristics?.map(\.uuid.uuidString).joined(separator: ", ") ?? "none"
+        logger.info("Discovered characteristics of service \(serviceUUID.uuidString), chars: \(characteristics)")
+        if serviceUUID == CBUUID.ACS_SERVICE {
+            guard let rcsService = peripheral.services?.first(where: { $0.uuid == CBUUID.RCS_SERVICE }) else {
+                logger.error("Couldnt find RCS service")
+                connecionCompletion?(.discoveringFailed)
+                return
+            }
+
+            peripheral.discoverCharacteristics(CBUUID.RCS_CHARACTERISTICS, for: rcsService)
+            return
+        }
+
+        if serviceUUID == CBUUID.RCS_SERVICE {
+            guard let rcsService = peripheral.services?.first(where: { $0.uuid == CBUUID.DIS_SERVICE }) else {
+                logger.error("Couldnt find DIS service")
+                connecionCompletion?(.discoveringFailed)
+                return
+            }
+
+            peripheral.discoverCharacteristics(CBUUID.DIS_CHARACTERISTICS, for: rcsService)
+            return
+        }
+
+        if serviceUUID == CBUUID.DIS_SERVICE {
+            guard let rcsService = peripheral.services?.first(where: { $0.uuid == CBUUID.CGM_SERVICE }) else {
+                logger.error("Couldnt find CGM service")
+                connecionCompletion?(.discoveringFailed)
+                return
+            }
+
+            peripheral.discoverCharacteristics(CBUUID.CGM_CHARACTERISTICS, for: rcsService)
+            return
+        }
+
+        guard let services = peripheral.services else {
+            logger.error("No services found on peripheral")
+            return
+        }
+
+        self.peripheral = peripheral
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
+
+            let pairingAdapter: PairingAdapter
+            if services.contains(where: { $0.uuid == CBUUID.ACS_SERVICE }) {
+                pairingAdapter = AcsAdapter(cgmManager: cgmManager, peripheralManager: self)
+            } else {
+                pairingAdapter = LegacyPasskeyAdapater(cgmManager: cgmManager, peripheralManager: self)
+            }
+            self.pairingAdapter = pairingAdapter
+
+            if !pairingAdapter.pair() {
+                logger.error("Failed to pair device...")
+                return
+            }
+            if !pairingAdapter.initialize() {
+                logger.error("Initialization failed...")
+                return
+            }
+
+            pairingAdapter.configureSensor()
+            connecionCompletion?(nil)
+        }
+    }
+
+    func peripheral(_: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: (any Error)?) {
+        if let error = error {
+            logger.error("Received error in didUpdateValueFor: \(error.localizedDescription)")
+            return
+        }
+        guard let data = characteristic.value else {
+            let service = characteristic.service?.uuid.uuidString ?? ""
+            let characteristic = characteristic.uuid.uuidString
+            logger.warning("Empty data -> characteristic: \(characteristic), service: \(service)")
+
+            return
+        }
+
+        logger.debug("Recieved data: \(data.hexString()), characteristic: \(characteristic.uuid.uuidString)", type: .receive)
+        if let (readQueue, readCharacteristic) = readQueue, readCharacteristic == characteristic.uuid {
+            readQueue.leave(Data(data))
+            return
+        }
+
+        if let (writeQueue, writeCharacteristic) = writeQueue, writeCharacteristic.contains(characteristic.uuid) {
+            writeQueue.leave(Data(data))
+            return
+        }
+
+        if characteristic.uuid == CBUUID.CGM_MEASUREMENT {
+            let measurement = CgmMeasurement(data)
+            logger.info(measurement.describe)
+
+            if !measurement.isValid {
+                logger.warning("Ignoring invalid glucose reading (sensor malfunction)")
+                cgmManager.readingsUnavailable = true
+                return
+            }
+
+            cgmManager.readingsUnavailable = false
+            cgmManager.notifyNewData(measurements: [measurement])
+            return
+        }
+
+        if characteristic.uuid == CBUUID.CGM_STATUS {
+            let status = SensorStatus(data: data)
+            logger.info(status.describe)
+
+            cgmManager.notifyNewStatus(status)
+            return
+        }
+
+        logger.warning("Not handled above message...", type: .receive)
+    }
+}

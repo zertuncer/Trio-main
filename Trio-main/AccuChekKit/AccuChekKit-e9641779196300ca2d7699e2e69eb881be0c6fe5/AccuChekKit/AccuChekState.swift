@@ -1,0 +1,192 @@
+import HealthKit
+import LoopKit
+
+public struct GlucoseDisplay: GlucoseDisplayable {
+    public let isStateValid: Bool
+    public let trendType: LoopKit.GlucoseTrend?
+    public let trendRate: HKQuantity? = nil
+    public let isLocal: Bool = true
+    public let glucoseRangeCategory: LoopKit.GlucoseRangeCategory? = nil
+
+    init(state: AccuChekState) {
+        if let lastSynced = state.lastGlucoseDate {
+            isStateValid = abs(lastSynced.timeIntervalSinceNow) <= TimeInterval(minutes: 15)
+        } else {
+            isStateValid = false
+        }
+
+        trendType = state.lastGlucoseTrend
+    }
+}
+
+enum CalibrationPhase: UInt8 {
+    case warmingup
+    case calibratedOnce
+    case done
+
+    var title: String? {
+        switch self {
+        case .calibratedOnce,
+             .warmingup:
+            return String(localized: "Trend mode", comment: "trend mode title")
+        default:
+            return nil
+        }
+    }
+
+    var description: String? {
+        switch self {
+        case .warmingup:
+            return String(
+                localized: "Your sensor is warming up. The first calibration is possible from: %@",
+                comment: "trend mode description warming up"
+            )
+        case .calibratedOnce:
+            return String(
+                localized: "Your sensor is calibrating. To complete the calibration phase, make sure to calibate between %@ and %@",
+                comment: "trend mode description calibrated once"
+            )
+        default:
+            return nil
+        }
+    }
+}
+
+struct AccuChekState: RawRepresentable, Equatable {
+    public typealias RawValue = CGMManager.RawStateValue
+
+    public var onboarded: Bool
+
+    public var isConnected: Bool
+    public var mtu: UInt16 = 0
+    public var sensorInfo: SensorInfo?
+    public var deviceName: String?
+    public var previousDeviceName: String?
+//    public var certificate: Certificate?
+
+    public var cgmStatus: [SensorStatusEnum]
+    public var cgmStatusTimestamp: Date?
+
+    // Set when the most recent measurement reported a sensor malfunction (status
+    // bit 0x08). Cleared on the next valid reading. Defaults to OK.
+    public var readingsUnavailable: Bool = false
+
+    // Authentication of CGM
+    public var pinCode: String?
+    public var keyAgreementPrivate: Data?
+    public var aesKey: Data?
+    public var aesNonce: Data?
+
+    public var cgmStartTime: Date?
+    public var cgmEndTime: Date? {
+        guard let cgmStartTime else {
+            return nil
+        }
+
+        return cgmStartTime.addingTimeInterval(.days(14))
+    }
+
+    public var lastGlucoseOffset: TimeInterval?
+    public var lastGlucoseDate: Date?
+    public var lastGlucoseValue: UInt16?
+    public var lastGlucoseTrend: GlucoseTrend?
+
+    public var nextCalibrationAt: Date?
+    public var calibrationPhase: CalibrationPhase
+
+    public var accessToken: String?
+    public var expiresAt: Date?
+    public var refreshToken: String?
+
+    init(rawValue: CGMManager.RawStateValue) {
+        onboarded = rawValue["onboarded"] as? Bool ?? false
+        isConnected = false
+        mtu = rawValue["mtu"] as? UInt16 ?? 20
+        deviceName = rawValue["deviceName"] as? String
+        cgmStatusTimestamp = rawValue["cgmStatusTimestamp"] as? Date
+        readingsUnavailable = rawValue["readingsUnavailable"] as? Bool ?? false
+        pinCode = rawValue["pinCode"] as? String
+        keyAgreementPrivate = rawValue["keyAgreementPrivate"] as? Data
+        aesKey = rawValue["aesKey"] as? Data
+        aesNonce = rawValue["aesNonce"] as? Data
+        cgmStartTime = rawValue["cgmStartTime"] as? Date
+        lastGlucoseOffset = rawValue["lastGlucoseOffset"] as? TimeInterval
+        lastGlucoseDate = rawValue["lastGlucoseDate"] as? Date
+        lastGlucoseValue = rawValue["lastGlucoseValue"] as? UInt16
+        nextCalibrationAt = rawValue["nextCalibrationAt"] as? Date
+        accessToken = rawValue["accessToken"] as? String
+        refreshToken = rawValue["refreshToken"] as? String
+        expiresAt = rawValue["expiresAt"] as? Date
+        previousDeviceName = rawValue["previousDeviceName"] as? String
+
+        if let rawLastGlucoseTrend = rawValue["lastGlucoseTrend"] as? GlucoseTrend.RawValue {
+            lastGlucoseTrend = GlucoseTrend(rawValue: rawLastGlucoseTrend) ?? .flat
+        } else {
+            lastGlucoseTrend = .flat
+        }
+
+        if let rawCgmStatus = rawValue["cgmStatus"] as? [SensorStatusEnum.RawValue] {
+            cgmStatus = rawCgmStatus.compactMap { SensorStatusEnum(rawValue: $0) }
+        } else {
+            cgmStatus = []
+        }
+
+        if let rawCalibrationPhase = rawValue["calibrationPhase"] as? CalibrationPhase.RawValue {
+            calibrationPhase = CalibrationPhase(rawValue: rawCalibrationPhase) ?? .done
+        } else {
+            calibrationPhase = .done
+        }
+
+        if let sensorInfoRaw = rawValue["sensorInfo"] as? SensorInfo.RawValue {
+            sensorInfo = SensorInfo(rawValue: sensorInfoRaw)
+        }
+    }
+
+    var rawValue: CGMManager.RawStateValue {
+        var raw: CGMManager.RawStateValue = [:]
+
+        raw["onboarded"] = onboarded
+        raw["mtu"] = mtu
+        raw["deviceName"] = deviceName
+        raw["pinCode"] = pinCode
+        raw["keyAgreementPrivate"] = keyAgreementPrivate
+        raw["aesKey"] = aesKey
+        raw["aesNonce"] = aesNonce
+        raw["cgmStatus"] = cgmStatus.map(\.rawValue)
+        raw["cgmStatusTimestamp"] = cgmStatusTimestamp
+        raw["readingsUnavailable"] = readingsUnavailable
+        raw["cgmStartTime"] = cgmStartTime
+        raw["lastGlucoseOffset"] = lastGlucoseOffset
+        raw["lastGlucoseDate"] = lastGlucoseDate
+        raw["lastGlucoseValue"] = lastGlucoseValue
+        raw["lastGlucoseTrend"] = lastGlucoseTrend?.rawValue
+        raw["nextCalibrationAt"] = nextCalibrationAt
+        raw["calibrationPhase"] = calibrationPhase.rawValue
+        raw["accessToken"] = accessToken
+        raw["refreshToken"] = refreshToken
+        raw["expiresAt"] = expiresAt
+        raw["previousDeviceName"] = previousDeviceName
+        raw["sensorInfo"] = sensorInfo?.rawValue
+
+        return raw
+    }
+
+    var debugDescription: String {
+        [
+            "* onboarded: \(onboarded)",
+            "* mtu: \(mtu)",
+            "* deviceName: \(String(describing: deviceName))",
+            "* sensorInfo: \(String(describing: sensorInfo))",
+            "* isConnected: \(isConnected)",
+            "* cgmStartTime: \(String(describing: cgmStartTime))",
+            "* cgmStatus: \(String(describing: cgmStatus))",
+            "* cgmStatusTimestamp: \(String(describing: cgmStatusTimestamp))",
+            "* readingsUnavailable: \(readingsUnavailable)",
+            "* lastGlucoseOffset: \(String(describing: lastGlucoseOffset?.minutes))",
+            "* lastGlucoseDate: \(String(describing: lastGlucoseDate))",
+            "* lastGlucoseValue: \(String(describing: lastGlucoseValue))",
+            "* lastGlucoseTrend: \(String(describing: lastGlucoseTrend))",
+            "* nextCalibrationAt: \(String(describing: nextCalibrationAt))"
+        ].joined(separator: "\n")
+    }
+}

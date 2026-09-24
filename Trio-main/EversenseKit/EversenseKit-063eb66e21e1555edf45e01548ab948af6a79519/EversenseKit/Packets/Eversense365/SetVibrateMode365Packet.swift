@@ -1,0 +1,29 @@
+extension Eversense365 {
+    class SetDoNotDisturbResponse {}
+
+    class SetDoNotDisturbRequest: BasePacket {
+        typealias T = SetDoNotDisturbResponse
+
+        var responseType: UInt8 {
+            PacketIds.WriteResponseId.rawValue
+        }
+
+        var responseId: UInt8? {
+            WriteIds.VibrateMode.rawValue
+        }
+
+        let silenced: Bool
+        init(silenced: Bool) {
+            self.silenced = silenced
+        }
+
+        func getRequestData() -> Data {
+            let data = Data([PacketIds.WriteCommandId.rawValue, WriteIds.VibrateMode.rawValue, silenced ? 1 : 0])
+            return CryptoUtil.shared.encrypt(data: data)
+        }
+
+        func parseResponse(data _: Data) -> SetDoNotDisturbResponse {
+            SetDoNotDisturbResponse()
+        }
+    }
+}

@@ -1,0 +1,83 @@
+public enum SignalStrength: UInt8 {
+    case NoSignal = 0
+    case Poor = 1
+    case VeryLow = 2
+    case Low = 3
+    case Good = 4
+    case Excellent = 5
+
+    var rawThreshold: UInt16 {
+        switch self {
+        case .NoSignal:
+            return 0
+        case .Poor:
+            return 350
+        case .VeryLow:
+            return 500
+        case .Low:
+            return 800
+        case .Good:
+            return 1300
+        case .Excellent:
+            return 1600
+        }
+    }
+
+    var threshold: UInt16 {
+        switch self {
+        case .NoSignal:
+            return 0
+        case .Poor:
+            return 350
+        case .VeryLow:
+            return 395
+        case .Low:
+            return 494
+        case .Good:
+            return 705
+        case .Excellent:
+            return 903
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .NoSignal:
+            return String(localized: "No signal", comment: "signalStrength no signal")
+        case .Poor:
+            return String(localized: "Poor", comment: "signalStrength poor")
+        case .VeryLow:
+            return String(localized: "Very low", comment: "signalStrength very low")
+        case .Low:
+            return String(localized: "Low", comment: "signalStrength low")
+        case .Good:
+            return String(localized: "Good", comment: "signalStrength good")
+        case .Excellent:
+            return String(localized: "Excellent", comment: "signalStrength excellent")
+        }
+    }
+
+    static func from365(value: Int) -> SignalStrength {
+        if value >= 75 {
+            return SignalStrength.Excellent
+        }
+
+        if value >= 48 {
+            return SignalStrength.Good
+        }
+
+        if value >= 30 {
+            return SignalStrength.Low
+        }
+
+        if value >= 28 {
+            return SignalStrength.VeryLow
+        }
+
+        if value >= 25 {
+            return SignalStrength.Poor
+        }
+
+        return SignalStrength.NoSignal
+    }
+}

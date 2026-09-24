@@ -1,0 +1,2287 @@
+[
+  {
+    "fileName": "CustomProgressView.swift",
+    "relPath": "Helpers/CustomProgressView.swift",
+    "module": "Helpers",
+    "lines": 68,
+    "views": [
+      "CustomProgressView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ProgressBar.swift",
+    "relPath": "Helpers/ProgressBar.swift",
+    "module": "Helpers",
+    "lines": 25,
+    "views": [
+      "ProgressBar"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "SettingsRowView.swift",
+    "relPath": "Helpers/SettingsRowView.swift",
+    "module": "Helpers",
+    "lines": 57,
+    "views": [
+      "SettingsRowView",
+      "SettingsRowViewCustomImage"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AddCarbsRootView.swift",
+    "relPath": "Modules/AddCarbs/View/AddCarbsRootView.swift",
+    "module": "AddCarbs",
+    "lines": 307,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AdjustmentsRootView.swift",
+    "relPath": "Modules/Adjustments/View/AdjustmentsRootView.swift",
+    "module": "Adjustments",
+    "lines": 425,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AddOverrideForm.swift",
+    "relPath": "Modules/Adjustments/View/Overrides/AddOverrideForm.swift",
+    "module": "Adjustments",
+    "lines": 465,
+    "views": [
+      "AddOverrideForm"
+    ],
+    "deps": [
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "AdjustmentsRootView+Overrides.swift",
+    "relPath": "Modules/Adjustments/View/Overrides/AdjustmentsRootView+Overrides.swift",
+    "module": "Adjustments",
+    "lines": 250,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "EditOverrideForm.swift",
+    "relPath": "Modules/Adjustments/View/Overrides/EditOverrideForm.swift",
+    "module": "Adjustments",
+    "lines": 628,
+    "views": [
+      "EditOverrideForm"
+    ],
+    "deps": [
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "OverrideHelpView.swift",
+    "relPath": "Modules/Adjustments/View/Overrides/OverrideHelpView.swift",
+    "module": "Adjustments",
+    "lines": 53,
+    "views": [
+      "OverrideHelpView"
+    ],
+    "deps": [
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "AddTempTargetForm.swift",
+    "relPath": "Modules/Adjustments/View/TempTargets/AddTempTargetForm.swift",
+    "module": "Adjustments",
+    "lines": 401,
+    "views": [
+      "AddTempTargetForm"
+    ],
+    "deps": [
+      "@StateObject state: Adjustments.StateModel",
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "AdjustmentsRootView+TempTargets.swift",
+    "relPath": "Modules/Adjustments/View/TempTargets/AdjustmentsRootView+TempTargets.swift",
+    "module": "Adjustments",
+    "lines": 237,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "EditTempTargetForm.swift",
+    "relPath": "Modules/Adjustments/View/TempTargets/EditTempTargetForm.swift",
+    "module": "Adjustments",
+    "lines": 453,
+    "views": [
+      "EditTempTargetForm"
+    ],
+    "deps": [
+      "@ObservedObject tempTarget: TempTargetStored",
+      "@StateObject state: Adjustments.StateModel",
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "TempTargetHelpView.swift",
+    "relPath": "Modules/Adjustments/View/TempTargets/TempTargetHelpView.swift",
+    "module": "Adjustments",
+    "lines": 64,
+    "views": [
+      "TempTargetHelpView"
+    ],
+    "deps": [
+      "state: Adjustments.StateModel"
+    ]
+  },
+  {
+    "fileName": "RadioButton.swift",
+    "relPath": "Modules/Adjustments/View/ViewElements/RadioButton.swift",
+    "module": "Adjustments",
+    "lines": 22,
+    "views": [
+      "RadioButton"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "TargetPicker.swift",
+    "relPath": "Modules/Adjustments/View/ViewElements/TargetPicker.swift",
+    "module": "Adjustments",
+    "lines": 80,
+    "views": [
+      "TargetPicker"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AlarmWindowsRootView.swift",
+    "relPath": "Modules/AlarmWindows/View/AlarmWindowsRootView.swift",
+    "module": "AlarmWindows",
+    "lines": 135,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AlgorithmAdvancedSettingsRootView.swift",
+    "relPath": "Modules/AlgorithmAdvancedSettings/View/AlgorithmAdvancedSettingsRootView.swift",
+    "module": "AlgorithmAdvancedSettings",
+    "lines": 415,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AppDiagnosticsRootView.swift",
+    "relPath": "Modules/AppDiagnostics/View/AppDiagnosticsRootView.swift",
+    "module": "AppDiagnostics",
+    "lines": 119,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AutosensSettingsRootView.swift",
+    "relPath": "Modules/AutosensSettings/View/AutosensSettingsRootView.swift",
+    "module": "AutosensSettings",
+    "lines": 244,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AutotuneConfigRootView.swift",
+    "relPath": "Modules/AutotuneConfig/View/AutotuneConfigRootView.swift",
+    "module": "AutotuneConfig",
+    "lines": 198,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "BasalProfileEditorRootView.swift",
+    "relPath": "Modules/BasalProfileEditor/View/BasalProfileEditorRootView.swift",
+    "module": "BasalProfileEditor",
+    "lines": 253,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "BaseView.swift",
+    "relPath": "Modules/Base/BaseView.swift",
+    "module": "Base",
+    "lines": 29,
+    "views": [],
+    "deps": [
+      "state: StateModelType",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "BolusCalculatorConfigRootView.swift",
+    "relPath": "Modules/BolusCalculatorConfig/View/BolusCalculatorConfigRootView.swift",
+    "module": "BolusCalculatorConfig",
+    "lines": 206,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CalendarEventSettingsRootView.swift",
+    "relPath": "Modules/CalendarEventSettings/View/CalendarEventSettingsRootView.swift",
+    "module": "CalendarEventSettings",
+    "lines": 153,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CalibrationsChart.swift",
+    "relPath": "Modules/Calibrations/View/CalibrationsChart.swift",
+    "module": "Calibrations",
+    "lines": 66,
+    "views": [
+      "CalibrationsChart"
+    ],
+    "deps": [
+      "state: Calibrations.StateModel"
+    ]
+  },
+  {
+    "fileName": "CalibrationsRootView.swift",
+    "relPath": "Modules/Calibrations/View/CalibrationsRootView.swift",
+    "module": "Calibrations",
+    "lines": 128,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CarbRatioEditorRootView.swift",
+    "relPath": "Modules/CarbRatioEditor/View/CarbRatioEditorRootView.swift",
+    "module": "CarbRatioEditor",
+    "lines": 202,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CGMRootView.swift",
+    "relPath": "Modules/CGMSettings/View/CGMRootView.swift",
+    "module": "CGMSettings",
+    "lines": 227,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CGMSettingsView.swift",
+    "relPath": "Modules/CGMSettings/View/CGMSettingsView.swift",
+    "module": "CGMSettings",
+    "lines": 44,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "CGMSetupView.swift",
+    "relPath": "Modules/CGMSettings/View/CGMSetupView.swift",
+    "module": "CGMSettings",
+    "lines": 67,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "CustomCGMOptionsView.swift",
+    "relPath": "Modules/CGMSettings/View/CustomCGMOptionsView.swift",
+    "module": "CGMSettings",
+    "lines": 486,
+    "views": [
+      "CustomCGMOptionsView"
+    ],
+    "deps": [
+      "@ObservedObject state: CGMSettings.StateModel",
+      "state: CGMSettings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "ConfigEditorRootView.swift",
+    "relPath": "Modules/ConfigEditor/View/ConfigEditorRootView.swift",
+    "module": "ConfigEditor",
+    "lines": 73,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AddContactImageSheet.swift",
+    "relPath": "Modules/ContactImage/View/AddContactImageSheet.swift",
+    "module": "ContactImage",
+    "lines": 292,
+    "views": [
+      "AddContactImageSheet"
+    ],
+    "deps": [
+      "state: ContactImage.StateModel",
+      "@ObservedObject state: ContactImage.StateModel"
+    ]
+  },
+  {
+    "fileName": "ContactImageDetailView.swift",
+    "relPath": "Modules/ContactImage/View/ContactImageDetailView.swift",
+    "module": "ContactImage",
+    "lines": 249,
+    "views": [
+      "ContactImageDetailView"
+    ],
+    "deps": [
+      "state: ContactImage.StateModel",
+      "@ObservedObject state: ContactImage.StateModel"
+    ]
+  },
+  {
+    "fileName": "ContactImageHelpView.swift",
+    "relPath": "Modules/ContactImage/View/ContactImageHelpView.swift",
+    "module": "ContactImage",
+    "lines": 87,
+    "views": [
+      "ContactImageHelpView"
+    ],
+    "deps": [
+      "state: ContactImage.StateModel"
+    ]
+  },
+  {
+    "fileName": "ContactImageRootView.swift",
+    "relPath": "Modules/ContactImage/View/ContactImageRootView.swift",
+    "module": "ContactImage",
+    "lines": 99,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AddDeviceAlarmSheet.swift",
+    "relPath": "Modules/DeviceAlarms/View/AddDeviceAlarmSheet.swift",
+    "module": "DeviceAlarms",
+    "lines": 65,
+    "views": [
+      "AddDeviceAlarmSheet"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "DeviceAlarmEditorView.swift",
+    "relPath": "Modules/DeviceAlarms/View/DeviceAlarmEditorView.swift",
+    "module": "DeviceAlarms",
+    "lines": 129,
+    "views": [
+      "DeviceAlarmEditorView"
+    ],
+    "deps": [
+      "@ObservedObject store: DeviceAlertsStore"
+    ]
+  },
+  {
+    "fileName": "DeviceAlarmsRootView.swift",
+    "relPath": "Modules/DeviceAlarms/View/DeviceAlarmsRootView.swift",
+    "module": "DeviceAlarms",
+    "lines": 227,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "DynamicSettingsRootView.swift",
+    "relPath": "Modules/DynamicSettings/View/DynamicSettingsRootView.swift",
+    "module": "DynamicSettings",
+    "lines": 289,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "UnitsLimitsSettingsRootView.swift",
+    "relPath": "Modules/GeneralSettings/View/UnitsLimitsSettingsRootView.swift",
+    "module": "GeneralSettings",
+    "lines": 230,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AddGlucoseAlertSheet.swift",
+    "relPath": "Modules/GlucoseAlerts/View/AddGlucoseAlertSheet.swift",
+    "module": "GlucoseAlerts",
+    "lines": 87,
+    "views": [
+      "AddGlucoseAlertSheet"
+    ],
+    "deps": [
+      "@ObservedObject store: GlucoseAlertsStore"
+    ]
+  },
+  {
+    "fileName": "GlucoseAlertEditorView.swift",
+    "relPath": "Modules/GlucoseAlerts/View/GlucoseAlertEditorView.swift",
+    "module": "GlucoseAlerts",
+    "lines": 191,
+    "views": [
+      "GlucoseAlertEditorView"
+    ],
+    "deps": [
+      "@ObservedObject store: GlucoseAlertsStore"
+    ]
+  },
+  {
+    "fileName": "GlucoseAlertsRootView.swift",
+    "relPath": "Modules/GlucoseAlerts/View/GlucoseAlertsRootView.swift",
+    "module": "GlucoseAlerts",
+    "lines": 348,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AlarmActiveSection.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmActiveSection.swift",
+    "module": "GlucoseAlerts",
+    "lines": 23,
+    "views": [
+      "AlarmActiveSection"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AlarmAudioSection.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmAudioSection.swift",
+    "module": "GlucoseAlerts",
+    "lines": 179,
+    "views": [
+      "AlarmAudioSection",
+      "TonePickerSheet",
+      "TonePickerRow"
+    ],
+    "deps": [
+      "@ObservedObject previewer: SoundPreviewPlayer"
+    ]
+  },
+  {
+    "fileName": "AlarmBGSection.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmBGSection.swift",
+    "module": "GlucoseAlerts",
+    "lines": 64,
+    "views": [
+      "AlarmBGSection"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AlarmEnumMenuPicker.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmEnumMenuPicker.swift",
+    "module": "GlucoseAlerts",
+    "lines": 39,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "AlarmGramsSection.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmGramsSection.swift",
+    "module": "GlucoseAlerts",
+    "lines": 59,
+    "views": [
+      "AlarmGramsSection"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AlarmWindowIcon.swift",
+    "relPath": "Modules/GlucoseAlerts/View/Components/AlarmWindowIcon.swift",
+    "module": "GlucoseAlerts",
+    "lines": 44,
+    "views": [
+      "AlarmWindowIcon"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AppleHealthKitRootView.swift",
+    "relPath": "Modules/HealthKit/View/AppleHealthKitRootView.swift",
+    "module": "HealthKit",
+    "lines": 83,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "CarbEntryEditorView.swift",
+    "relPath": "Modules/History/View/CarbEntryEditorView.swift",
+    "module": "History",
+    "lines": 237,
+    "views": [
+      "CarbEntryEditorView"
+    ],
+    "deps": [
+      "state: History.StateModel"
+    ]
+  },
+  {
+    "fileName": "HistoryRootView+AddGlucose.swift",
+    "relPath": "Modules/History/View/HistoryRootView+AddGlucose.swift",
+    "module": "History",
+    "lines": 72,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Adjustments.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Adjustments.swift",
+    "module": "History",
+    "lines": 134,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Confirmations.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Confirmations.swift",
+    "module": "History",
+    "lines": 43,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Filters.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Filters.swift",
+    "module": "History",
+    "lines": 103,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Glucose.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Glucose.swift",
+    "module": "History",
+    "lines": 88,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Meals.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Meals.swift",
+    "module": "History",
+    "lines": 100,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView+Treatments.swift",
+    "relPath": "Modules/History/View/HistoryRootView+Treatments.swift",
+    "module": "History",
+    "lines": 116,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HistoryRootView.swift",
+    "relPath": "Modules/History/View/HistoryRootView.swift",
+    "module": "History",
+    "lines": 156,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "GlassChrome.swift",
+    "relPath": "Modules/Home/View/GlassChrome.swift",
+    "module": "Home",
+    "lines": 120,
+    "views": [
+      "GlassPanelBackground"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HomeLayout.swift",
+    "relPath": "Modules/Home/View/HomeLayout.swift",
+    "module": "Home",
+    "lines": 24,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "HomeRootView+BottomControls.swift",
+    "relPath": "Modules/Home/View/HomeRootView+BottomControls.swift",
+    "module": "Home",
+    "lines": 829,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HomeRootView+Header.swift",
+    "relPath": "Modules/Home/View/HomeRootView+Header.swift",
+    "module": "Home",
+    "lines": 200,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "HomeRootView+MealPanel.swift",
+    "relPath": "Modules/Home/View/HomeRootView+MealPanel.swift",
+    "module": "Home",
+    "lines": 208,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HomeRootView+Refresh.swift",
+    "relPath": "Modules/Home/View/HomeRootView+Refresh.swift",
+    "module": "Home",
+    "lines": 96,
+    "views": [
+      "RootView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "HomeRootView.swift",
+    "relPath": "Modules/Home/View/HomeRootView.swift",
+    "module": "Home",
+    "lines": 623,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "MultiUsePanelState.swift",
+    "relPath": "Modules/Home/View/MultiUsePanelState.swift",
+    "module": "Home",
+    "lines": 37,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "ReleaseNotesSheetView.swift",
+    "relPath": "Modules/Home/View/ReleaseNotesSheetView.swift",
+    "module": "Home",
+    "lines": 176,
+    "views": [
+      "ReleaseNotesContentView",
+      "ReleaseNotesSheetView",
+      "ReleaseNotesDetailView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ChartLegendView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartLegendView.swift",
+    "module": "Home",
+    "lines": 291,
+    "views": [
+      "ChartLegendView"
+    ],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "MainChartView.swift",
+    "relPath": "Modules/Home/View/Chart/MainChartView.swift",
+    "module": "Home",
+    "lines": 1020,
+    "views": [
+      "MainChartView",
+      "StaticYAxisChart",
+      "MainChartCanvas"
+    ],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "BasalChart.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/BasalChart.swift",
+    "module": "Home",
+    "lines": 330,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "CarbView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/CarbView.swift",
+    "module": "Home",
+    "lines": 69,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "ChartSelectionRow.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/ChartSelectionRow.swift",
+    "module": "Home",
+    "lines": 211,
+    "views": [
+      "ChartSelectionRow"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "CobIobChart.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/CobIobChart.swift",
+    "module": "Home",
+    "lines": 173,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "ForecastView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/ForecastView.swift",
+    "module": "Home",
+    "lines": 92,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "GlucoseChartView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/GlucoseChartView.swift",
+    "module": "Home",
+    "lines": 120,
+    "views": [
+      "PreviewWrapper"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlucoseTargetsView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/GlucoseTargetsView.swift",
+    "module": "Home",
+    "lines": 35,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "InsulinView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/InsulinView.swift",
+    "module": "Home",
+    "lines": 51,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "OverrideView.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/OverrideView.swift",
+    "module": "Home",
+    "lines": 75,
+    "views": [],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "TempTargets.swift",
+    "relPath": "Modules/Home/View/Chart/ChartElements/TempTargets.swift",
+    "module": "Home",
+    "lines": 56,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "CurrentGlucoseView.swift",
+    "relPath": "Modules/Home/View/Header/CurrentGlucoseView.swift",
+    "module": "Home",
+    "lines": 443,
+    "views": [
+      "CurrentGlucoseView",
+      "TrendShape",
+      "CircleShape",
+      "TriangleShape"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "LoopStatusHelpView.swift",
+    "relPath": "Modules/Home/View/Header/LoopStatusHelpView.swift",
+    "module": "Home",
+    "lines": 257,
+    "views": [
+      "LoopStatusHelpView"
+    ],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "LoopStatusView.swift",
+    "relPath": "Modules/Home/View/Header/LoopStatusView.swift",
+    "module": "Home",
+    "lines": 347,
+    "views": [
+      "LoopStatusView"
+    ],
+    "deps": [
+      "state: Home.StateModel"
+    ]
+  },
+  {
+    "fileName": "LoopView.swift",
+    "relPath": "Modules/Home/View/Header/LoopView.swift",
+    "module": "Home",
+    "lines": 235,
+    "views": [
+      "LoopView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "PumpView.swift",
+    "relPath": "Modules/Home/View/Header/PumpView.swift",
+    "module": "Home",
+    "lines": 330,
+    "views": [
+      "PumpView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "CGMSensorDisplayState.swift",
+    "relPath": "Modules/Home/View/Header/SensorLifecycle/CGMSensorDisplayState.swift",
+    "module": "Home",
+    "lines": 22,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "SensorLifecycleArcView.swift",
+    "relPath": "Modules/Home/View/Header/SensorLifecycle/SensorLifecycleArcView.swift",
+    "module": "Home",
+    "lines": 59,
+    "views": [
+      "SensorLifecycleArcView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "SensorStatusTagView.swift",
+    "relPath": "Modules/Home/View/Header/SensorLifecycle/SensorStatusTagView.swift",
+    "module": "Home",
+    "lines": 56,
+    "views": [
+      "SensorStatusTagView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "QuickPickTreatmentsInfoView.swift",
+    "relPath": "Modules/Home/View/QuickPickTreatments/QuickPickTreatmentsInfoView.swift",
+    "module": "Home",
+    "lines": 35,
+    "views": [
+      "QuickPickTreatmentsInfoView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "QuickPickTreatmentsView.swift",
+    "relPath": "Modules/Home/View/QuickPickTreatments/QuickPickTreatmentsView.swift",
+    "module": "Home",
+    "lines": 381,
+    "views": [
+      "QuickPickTreatmentsView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "IconConfigRootWiew.swift",
+    "relPath": "Modules/IconConfig/View/IconConfigRootWiew.swift",
+    "module": "IconConfig",
+    "lines": 18,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "IconImage.swift",
+    "relPath": "Modules/IconConfig/View/IconImage.swift",
+    "module": "IconConfig",
+    "lines": 29,
+    "views": [
+      "IconImage"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "IconSelection.swift",
+    "relPath": "Modules/IconConfig/View/IconSelection.swift",
+    "module": "IconConfig",
+    "lines": 53,
+    "views": [
+      "IconSelection"
+    ],
+    "deps": [
+      "@EnvironmentObject model: Icons"
+    ]
+  },
+  {
+    "fileName": "ISFEditorRootView.swift",
+    "relPath": "Modules/ISFEditor/View/ISFEditorRootView.swift",
+    "module": "ISFEditor",
+    "lines": 207,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "LibreConfigRootView.swift",
+    "relPath": "Modules/LibreConfig/View/LibreConfigRootView.swift",
+    "module": "LibreConfig",
+    "lines": 55,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "LiveActivitySettingsRootView.swift",
+    "relPath": "Modules/LiveActivitySettings/View/LiveActivitySettingsRootView.swift",
+    "module": "LiveActivitySettings",
+    "lines": 275,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "LiveActivityWidgetConfiguration.swift",
+    "relPath": "Modules/LiveActivitySettings/View/LiveActivityWidgetConfiguration.swift",
+    "module": "LiveActivitySettings",
+    "lines": 437,
+    "views": [
+      "LiveActivityWidgetConfiguration"
+    ],
+    "deps": [
+      "@ObservedObject state: LiveActivitySettings.StateModel",
+      "state: LiveActivitySettings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "MainLoadingView.swift",
+    "relPath": "Modules/Main/View/MainLoadingView.swift",
+    "module": "Main",
+    "lines": 91,
+    "views": [
+      "LoadingView",
+      "RetryButton"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "MainMigrationErrorView.swift",
+    "relPath": "Modules/Main/View/MainMigrationErrorView.swift",
+    "module": "Main",
+    "lines": 131,
+    "views": [
+      "MainMigrationErrorView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "MainRootView.swift",
+    "relPath": "Modules/Main/View/MainRootView.swift",
+    "module": "Main",
+    "lines": 30,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "MealSettingsRootView.swift",
+    "relPath": "Modules/MealSettings/View/MealSettingsRootView.swift",
+    "module": "MealSettings",
+    "lines": 404,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "NightscoutConfigRootView.swift",
+    "relPath": "Modules/NightscoutConfig/View/NightscoutConfigRootView.swift",
+    "module": "NightscoutConfig",
+    "lines": 141,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "NightscoutConnectView.swift",
+    "relPath": "Modules/NightscoutConfig/View/NightscoutConnectView.swift",
+    "module": "NightscoutConfig",
+    "lines": 90,
+    "views": [
+      "NightscoutConnectView"
+    ],
+    "deps": [
+      "state: NightscoutConfig.StateModel",
+      "@ObservedObject state: NightscoutConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutFetchView.swift",
+    "relPath": "Modules/NightscoutConfig/View/NightscoutFetchView.swift",
+    "module": "NightscoutConfig",
+    "lines": 59,
+    "views": [
+      "NightscoutFetchView"
+    ],
+    "deps": [
+      "state: NightscoutConfig.StateModel",
+      "@ObservedObject state: NightscoutConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutUploadView.swift",
+    "relPath": "Modules/NightscoutConfig/View/NightscoutUploadView.swift",
+    "module": "NightscoutConfig",
+    "lines": 88,
+    "views": [
+      "NightscoutUploadView"
+    ],
+    "deps": [
+      "state: NightscoutConfig.StateModel",
+      "@ObservedObject state: NightscoutConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "OnboardingRootView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingRootView.swift",
+    "module": "Onboarding",
+    "lines": 834,
+    "views": [
+      "RootView",
+      "OnboardingProgressBar",
+      "OnboardingStepContent",
+      "OnboardingNavigationButtons"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "OnboardingView+AlgorithmUtil.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingView+AlgorithmUtil.swift",
+    "module": "Onboarding",
+    "lines": 498,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "OnboardingView+Util.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingView+Util.swift",
+    "module": "Onboarding",
+    "lines": 554,
+    "views": [
+      "BulletPoint"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "TherapySettingEditorView.swift",
+    "relPath": "Modules/Onboarding/View/TherapySettingEditorView.swift",
+    "module": "Onboarding",
+    "lines": 422,
+    "views": [
+      "TherapySettingEditorView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "LogoBurstSplash.swift",
+    "relPath": "Modules/Onboarding/View/Animations/LogoBurstSplash.swift",
+    "module": "Onboarding",
+    "lines": 165,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "PulsingLogoAnimation.swift",
+    "relPath": "Modules/Onboarding/View/Animations/PulsingLogoAnimation.swift",
+    "module": "Onboarding",
+    "lines": 51,
+    "views": [
+      "PulsingLogoAnimation"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "BluetoothPermissionStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/BluetoothPermissionStepView.swift",
+    "module": "Onboarding",
+    "lines": 163,
+    "views": [
+      "BluetoothPermissionStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "CompletedStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/CompletedStepView.swift",
+    "module": "Onboarding",
+    "lines": 117,
+    "views": [
+      "CompletedStepView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "DeliveryLimitsStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/DeliveryLimitsStepView.swift",
+    "module": "Onboarding",
+    "lines": 150,
+    "views": [
+      "DeliveryLimitsStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NotificationPermissionStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/NotificationPermissionStepView.swift",
+    "module": "Onboarding",
+    "lines": 98,
+    "views": [
+      "NotificationPermissionStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "OverviewStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/OverviewStepView.swift",
+    "module": "Onboarding",
+    "lines": 71,
+    "views": [
+      "OverviewStepView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "UnitSelectionStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/UnitSelectionStepView.swift",
+    "module": "Onboarding",
+    "lines": 55,
+    "views": [
+      "UnitSelectionStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "WelcomeStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/WelcomeStepView.swift",
+    "module": "Onboarding",
+    "lines": 42,
+    "views": [
+      "WelcomeStepView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "AlgorithmSettingsContentsStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/AlgorithmSettings/AlgorithmSettingsContentsStepView.swift",
+    "module": "Onboarding",
+    "lines": 63,
+    "views": [
+      "AlgorithmSettingsContentsStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "AlgorithmSettingsImportantNotesStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/AlgorithmSettings/AlgorithmSettingsImportantNotesStepView.swift",
+    "module": "Onboarding",
+    "lines": 62,
+    "views": [
+      "AlgorithmSettingsImportantNotesStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "AlgorithmSettingsSubstepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/AlgorithmSettings/AlgorithmSettingsSubstepView.swift",
+    "module": "Onboarding",
+    "lines": 345,
+    "views": [],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutImportStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutImportStepView.swift",
+    "module": "Onboarding",
+    "lines": 94,
+    "views": [
+      "NightscoutImportStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutLoginStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutLoginStepView.swift",
+    "module": "Onboarding",
+    "lines": 78,
+    "views": [
+      "NightscoutLoginStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutSetupStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutSetupStepView.swift",
+    "module": "Onboarding",
+    "lines": 54,
+    "views": [
+      "NightscoutSetupStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutUploadGlucoseStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutUploadGlucoseStepView.swift",
+    "module": "Onboarding",
+    "lines": 31,
+    "views": [
+      "NightscoutUploadGlucoseStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "NightscoutUploadStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/Nightscout/NightscoutUploadStepView.swift",
+    "module": "Onboarding",
+    "lines": 45,
+    "views": [
+      "NightscoutUploadStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "StartupForceCloseWarningStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/StartupGuide/StartupForceCloseWarningStepView.swift",
+    "module": "Onboarding",
+    "lines": 53,
+    "views": [
+      "StartupForceCloseWarningStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "StartupGuideStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/StartupGuide/StartupGuideStepView.swift",
+    "module": "Onboarding",
+    "lines": 45,
+    "views": [
+      "StartupGuideStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "StartupReturningUserStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/StartupGuide/StartupReturningUserStepView.swift",
+    "module": "Onboarding",
+    "lines": 95,
+    "views": [
+      "StartupReturningUserStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "BasalProfileStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/TherapySettings/BasalProfileStepView.swift",
+    "module": "Onboarding",
+    "lines": 168,
+    "views": [
+      "BasalProfileStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "CarbRatioStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/TherapySettings/CarbRatioStepView.swift",
+    "module": "Onboarding",
+    "lines": 197,
+    "views": [
+      "CarbRatioStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "GlucoseTargetStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/TherapySettings/GlucoseTargetStepView.swift",
+    "module": "Onboarding",
+    "lines": 136,
+    "views": [
+      "GlucoseTargetStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "InsulinSensitivityStepView.swift",
+    "relPath": "Modules/Onboarding/View/OnboardingSteps/TherapySettings/InsulinSensitivityStepView.swift",
+    "module": "Onboarding",
+    "lines": 210,
+    "views": [
+      "InsulinSensitivityStepView"
+    ],
+    "deps": [
+      "state: Onboarding.StateModel"
+    ]
+  },
+  {
+    "fileName": "PumpConfigRootView.swift",
+    "relPath": "Modules/PumpConfig/View/PumpConfigRootView.swift",
+    "module": "PumpConfig",
+    "lines": 144,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "PumpSettingsView.swift",
+    "relPath": "Modules/PumpConfig/View/PumpSettingsView.swift",
+    "module": "PumpConfig",
+    "lines": 23,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "PumpSetupView.swift",
+    "relPath": "Modules/PumpConfig/View/PumpSetupView.swift",
+    "module": "PumpConfig",
+    "lines": 56,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "QuickPickTreatmentsConfigRootView.swift",
+    "relPath": "Modules/QuickPickTreatmentsConfig/View/QuickPickTreatmentsConfigRootView.swift",
+    "module": "QuickPickTreatmentsConfig",
+    "lines": 64,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "RemoteControlConfig.swift",
+    "relPath": "Modules/RemoteControlConfig/View/RemoteControlConfig.swift",
+    "module": "RemoteControlConfig",
+    "lines": 107,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "SettingsRootView.swift",
+    "relPath": "Modules/Settings/View/SettingsRootView.swift",
+    "module": "Settings",
+    "lines": 506,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "SettingsRootViewModel.swift",
+    "relPath": "Modules/Settings/View/SettingsRootViewModel.swift",
+    "module": "Settings",
+    "lines": 23,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "TidepoolConfigView.swift",
+    "relPath": "Modules/Settings/View/TidepoolConfigView.swift",
+    "module": "Settings",
+    "lines": 45,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "TidepoolStartView.swift",
+    "relPath": "Modules/Settings/View/TidepoolStartView.swift",
+    "module": "Settings",
+    "lines": 113,
+    "views": [
+      "TidepoolStartView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AlgorithmSettings.swift",
+    "relPath": "Modules/Settings/View/Subviews/AlgorithmSettings.swift",
+    "module": "Settings",
+    "lines": 37,
+    "views": [
+      "AlgorithmSettings"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "DevicesView.swift",
+    "relPath": "Modules/Settings/View/Subviews/DevicesView.swift",
+    "module": "Settings",
+    "lines": 36,
+    "views": [
+      "DevicesView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "FeatureSettingsView.swift",
+    "relPath": "Modules/Settings/View/Subviews/FeatureSettingsView.swift",
+    "module": "Settings",
+    "lines": 53,
+    "views": [
+      "FeatureSettingsView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "NotificationsView.swift",
+    "relPath": "Modules/Settings/View/Subviews/NotificationsView.swift",
+    "module": "Settings",
+    "lines": 164,
+    "views": [
+      "NotificationsView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "ReleaseNotesListView.swift",
+    "relPath": "Modules/Settings/View/Subviews/ReleaseNotesListView.swift",
+    "module": "Settings",
+    "lines": 34,
+    "views": [
+      "ReleaseNotesListView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ServicesView.swift",
+    "relPath": "Modules/Settings/View/Subviews/ServicesView.swift",
+    "module": "Settings",
+    "lines": 39,
+    "views": [
+      "ServicesView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "SubmodulesView.swift",
+    "relPath": "Modules/Settings/View/Subviews/SubmodulesView.swift",
+    "module": "Settings",
+    "lines": 39,
+    "views": [
+      "SubmodulesView",
+      "KeyValueRow"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "TherapySettingsView.swift",
+    "relPath": "Modules/Settings/View/Subviews/TherapySettingsView.swift",
+    "module": "Settings",
+    "lines": 45,
+    "views": [
+      "TherapySettingsView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "TreatmentsSettingsView.swift",
+    "relPath": "Modules/Settings/View/Subviews/TreatmentsSettingsView.swift",
+    "module": "Settings",
+    "lines": 27,
+    "views": [
+      "TreatmentsSettingsView"
+    ],
+    "deps": [
+      "state: Settings.StateModel",
+      "@ObservedObject state: Settings.StateModel",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "SettingsExportRootView.swift",
+    "relPath": "Modules/SettingsExport/View/SettingsExportRootView.swift",
+    "module": "SettingsExport",
+    "lines": 209,
+    "views": [
+      "RootView",
+      "ExportCategoryRow"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "ShortcutsConfigView.swift",
+    "relPath": "Modules/ShortcutsConfig/View/ShortcutsConfigView.swift",
+    "module": "ShortcutsConfig",
+    "lines": 86,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "SMBSettingsRootView.swift",
+    "relPath": "Modules/SMBSettings/View/SMBSettingsRootView.swift",
+    "module": "SMBSettings",
+    "lines": 376,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "ChartsView.swift",
+    "relPath": "Modules/Stat/View/ChartsView.swift",
+    "module": "Stat",
+    "lines": 310,
+    "views": [
+      "ChartsView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "StatChartUtils.swift",
+    "relPath": "Modules/Stat/View/StatChartUtils.swift",
+    "module": "Stat",
+    "lines": 267,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "StatRootView.swift",
+    "relPath": "Modules/Stat/View/StatRootView.swift",
+    "module": "Stat",
+    "lines": 444,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "GlucoseDailyDistributionChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucoseDailyDistributionChart.swift",
+    "module": "Stat",
+    "lines": 221,
+    "views": [
+      "GlucoseDailyDistributionChart"
+    ],
+    "deps": [
+      "state: Stat.StateModel"
+    ]
+  },
+  {
+    "fileName": "GlucoseDailyPercentileChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucoseDailyPercentileChart.swift",
+    "module": "Stat",
+    "lines": 399,
+    "views": [
+      "GlucoseDailyPercentileChart"
+    ],
+    "deps": [
+      "state: Stat.StateModel"
+    ]
+  },
+  {
+    "fileName": "GlucoseDistributionChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucoseDistributionChart.swift",
+    "module": "Stat",
+    "lines": 99,
+    "views": [
+      "GlucoseDistributionChart"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlucoseMetricsView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucoseMetricsView.swift",
+    "module": "Stat",
+    "lines": 138,
+    "views": [
+      "GlucoseMetricsView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlucosePercentileChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucosePercentileChart.swift",
+    "module": "Stat",
+    "lines": 259,
+    "views": [
+      "GlucosePercentileChart",
+      "AGPSelectionPopover"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlucosePercentileDetailView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucosePercentileDetailView.swift",
+    "module": "Stat",
+    "lines": 90,
+    "views": [
+      "GlucoseDailyPercentileDetailView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlucoseSectorChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Glucose/GlucoseSectorChart.swift",
+    "module": "Stat",
+    "lines": 460,
+    "views": [
+      "GlucoseSectorChart",
+      "RangeDetailPopover"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "BolusStatsView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Insulin/BolusStatsView.swift",
+    "module": "Stat",
+    "lines": 394,
+    "views": [
+      "BolusStatsView",
+      "BolusSelectionPopover"
+    ],
+    "deps": [
+      "state: Stat.StateModel"
+    ]
+  },
+  {
+    "fileName": "TotalDailyDoseChart.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Insulin/TotalDailyDoseChart.swift",
+    "module": "Stat",
+    "lines": 324,
+    "views": [
+      "TotalDailyDoseChart",
+      "TDDSelectionPopover"
+    ],
+    "deps": [
+      "state: Stat.StateModel"
+    ]
+  },
+  {
+    "fileName": "LoopBarChartView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Looping/LoopBarChartView.swift",
+    "module": "Stat",
+    "lines": 81,
+    "views": [
+      "LoopBarChartView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "LoopStatsView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Looping/LoopStatsView.swift",
+    "module": "Stat",
+    "lines": 44,
+    "views": [
+      "LoopStatsView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "MealStatsView.swift",
+    "relPath": "Modules/Stat/View/ViewElements/Meal/MealStatsView.swift",
+    "module": "Stat",
+    "lines": 383,
+    "views": [
+      "MealStatsView",
+      "MealSelectionPopover"
+    ],
+    "deps": [
+      "state: Stat.StateModel"
+    ]
+  },
+  {
+    "fileName": "TargetBehavoirRootView.swift",
+    "relPath": "Modules/TargetBehavoir/View/TargetBehavoirRootView.swift",
+    "module": "TargetBehavoir",
+    "lines": 221,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "@EnvironmentObject appIcons: Icons",
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "TargetsEditorRootView.swift",
+    "relPath": "Modules/TargetsEditor/View/TargetsEditorRootView.swift",
+    "module": "TargetsEditor",
+    "lines": 190,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "TelemetryPreviewView.swift",
+    "relPath": "Modules/Telemetry/View/TelemetryPreviewView.swift",
+    "module": "Telemetry",
+    "lines": 82,
+    "views": [
+      "TelemetryPreviewView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "TelemetryPrivacyView.swift",
+    "relPath": "Modules/Telemetry/View/TelemetryPrivacyView.swift",
+    "module": "Telemetry",
+    "lines": 62,
+    "views": [
+      "TelemetryPrivacyView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ForecastChart.swift",
+    "relPath": "Modules/Treatments/View/ForecastChart.swift",
+    "module": "Treatments",
+    "lines": 423,
+    "views": [
+      "ForecastChart"
+    ],
+    "deps": [
+      "state: Treatments.StateModel"
+    ]
+  },
+  {
+    "fileName": "PopupView.swift",
+    "relPath": "Modules/Treatments/View/PopupView.swift",
+    "module": "Treatments",
+    "lines": 1014,
+    "views": [
+      "PopupView"
+    ],
+    "deps": [
+      "state: Treatments.StateModel"
+    ]
+  },
+  {
+    "fileName": "TreatmentsRootView.swift",
+    "relPath": "Modules/Treatments/View/TreatmentsRootView.swift",
+    "module": "Treatments",
+    "lines": 739,
+    "views": [
+      "RootView",
+      "DividerDouble",
+      "DividerCustom"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "AddMealPresetView.swift",
+    "relPath": "Modules/Treatments/View/MealPreset/AddMealPresetView.swift",
+    "module": "Treatments",
+    "lines": 124,
+    "views": [
+      "AddMealPresetView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "MealPresetView.swift",
+    "relPath": "Modules/Treatments/View/MealPreset/MealPresetView.swift",
+    "module": "Treatments",
+    "lines": 356,
+    "views": [
+      "MealPresetView"
+    ],
+    "deps": [
+      "state: Treatments.StateModel"
+    ]
+  },
+  {
+    "fileName": "UserInterfaceSettingsRootView.swift",
+    "relPath": "Modules/UserInterfaceSettings/View/UserInterfaceSettingsRootView.swift",
+    "module": "UserInterfaceSettings",
+    "lines": 775,
+    "views": [
+      "RootView",
+      "GlucoseColorGradientPreview"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "WatchConfigAppleWatchView.swift",
+    "relPath": "Modules/WatchConfig/View/WatchConfigAppleWatchView.swift",
+    "module": "WatchConfig",
+    "lines": 96,
+    "views": [
+      "WatchConfigAppleWatchView"
+    ],
+    "deps": [
+      "@ObservedObject state: WatchConfig.StateModel",
+      "resolver: Resolver",
+      "state: WatchConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "WatchConfigGarminAppConfigView.swift",
+    "relPath": "Modules/WatchConfig/View/WatchConfigGarminAppConfigView.swift",
+    "module": "WatchConfig",
+    "lines": 278,
+    "views": [
+      "WatchConfigGarminAppConfigView"
+    ],
+    "deps": [
+      "@ObservedObject state: WatchConfig.StateModel",
+      "state: WatchConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "WatchConfigGarminView.swift",
+    "relPath": "Modules/WatchConfig/View/WatchConfigGarminView.swift",
+    "module": "WatchConfig",
+    "lines": 195,
+    "views": [
+      "WatchConfigGarminView"
+    ],
+    "deps": [
+      "@ObservedObject state: WatchConfig.StateModel",
+      "state: WatchConfig.StateModel"
+    ]
+  },
+  {
+    "fileName": "WatchConfigRootView.swift",
+    "relPath": "Modules/WatchConfig/View/WatchConfigRootView.swift",
+    "module": "WatchConfig",
+    "lines": 28,
+    "views": [
+      "RootView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "TrioModalAlertScheduler.swift",
+    "relPath": "Services/Alerts/TrioModalAlertScheduler.swift",
+    "module": "Services / UI Widgets",
+    "lines": 454,
+    "views": [
+      "TrioAlertBanner"
+    ],
+    "deps": [
+      "@ObservedObject scheduler: TrioModalAlertScheduler"
+    ]
+  },
+  {
+    "fileName": "ContactPicture.swift",
+    "relPath": "Services/ContactImage/ContactPicture.swift",
+    "module": "Services / UI Widgets",
+    "lines": 966,
+    "views": [
+      "ContactPicture",
+      "ContactPicturePreview",
+      "Preview"
+    ],
+    "deps": [
+      "state: ContactImageState"
+    ]
+  },
+  {
+    "fileName": "GlucoseBobbleContactView.swift",
+    "relPath": "Services/ContactImage/GlucoseBobbleContactView.swift",
+    "module": "Services / UI Widgets",
+    "lines": 90,
+    "views": [
+      "GlucoseBobbleContactView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ListStateView.swift",
+    "relPath": "Shortcuts/State/ListStateView.swift",
+    "module": "Shortcuts",
+    "lines": 128,
+    "views": [
+      "ListStateView"
+    ],
+    "deps": [
+      "state: StateResults"
+    ]
+  },
+  {
+    "fileName": "BluetoothRequiredView.swift",
+    "relPath": "Views/BluetoothRequiredView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 35,
+    "views": [
+      "BluetoothRequiredView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "BolusProgressBar.swift",
+    "relPath": "Views/BolusProgressBar.swift",
+    "module": "Shared Views (Components)",
+    "lines": 28,
+    "views": [
+      "BolusProgressBar"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "BolusProgressViewStyle.swift",
+    "relPath": "Views/BolusProgressViewStyle.swift",
+    "module": "Shared Views (Components)",
+    "lines": 23,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "DefinitionRow.swift",
+    "relPath": "Views/DefinitionRow.swift",
+    "module": "Shared Views (Components)",
+    "lines": 49,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "DevicePickerView.swift",
+    "relPath": "Views/DevicePickerView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 121,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "DosingModeOverrideNote.swift",
+    "relPath": "Views/DosingModeOverrideNote.swift",
+    "module": "Shared Views (Components)",
+    "lines": 17,
+    "views": [
+      "DosingModeOverrideNote"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "GlassActionSheet.swift",
+    "relPath": "Views/GlassActionSheet.swift",
+    "module": "Shared Views (Components)",
+    "lines": 214,
+    "views": [
+      "GlassActionSheetView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "ManualGlucoseEntryView.swift",
+    "relPath": "Views/ManualGlucoseEntryView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 79,
+    "views": [
+      "ManualGlucoseEntryView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "Popup.swift",
+    "relPath": "Views/Popup.swift",
+    "module": "Shared Views (Components)",
+    "lines": 66,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "SettingInputHintView.swift",
+    "relPath": "Views/SettingInputHintView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 39,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "SettingInputSection.swift",
+    "relPath": "Views/SettingInputSection.swift",
+    "module": "Shared Views (Components)",
+    "lines": 303,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "SettingsSearchHighlight.swift",
+    "relPath": "Views/SettingsSearchHighlight.swift",
+    "module": "Shared Views (Components)",
+    "lines": 73,
+    "views": [
+      "SettingsHighlightScrollModifier",
+      "SettingsSearchHighlightAnimationModifier"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "SnoozeAlertsSheetView.swift",
+    "relPath": "Views/SnoozeAlertsSheetView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 99,
+    "views": [
+      "SnoozeAlertsSheetView"
+    ],
+    "deps": [
+      "resolver: Resolver"
+    ]
+  },
+  {
+    "fileName": "TagCloudView.swift",
+    "relPath": "Views/TagCloudView.swift",
+    "module": "Shared Views (Components)",
+    "lines": 224,
+    "views": [
+      "TagCloudView",
+      "TestTagCloudView"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "TextFieldWithToolBar.swift",
+    "relPath": "Views/TextFieldWithToolBar.swift",
+    "module": "Shared Views (Components)",
+    "lines": 461,
+    "views": [
+      "TextFieldWithToolBar"
+    ],
+    "deps": []
+  },
+  {
+    "fileName": "View+Snapshot.swift",
+    "relPath": "Views/View+Snapshot.swift",
+    "module": "Shared Views (Components)",
+    "lines": 18,
+    "views": [],
+    "deps": []
+  },
+  {
+    "fileName": "ViewModifiers.swift",
+    "relPath": "Views/ViewModifiers.swift",
+    "module": "Shared Views (Components)",
+    "lines": 171,
+    "views": [
+      "NavigationLazyView"
+    ],
+    "deps": []
+  }
+]
