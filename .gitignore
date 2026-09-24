@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# IDE / Editor
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# Gradle / Android
+.gradle/
+build/
+*/build/
+*/*/build/
+*/*/*/build/
+local.properties
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Node / JS
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Emulators / Large binaries
+*.zip
+*.exe
+*.apk
+*.aab
